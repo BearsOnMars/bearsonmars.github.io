@@ -2,30 +2,54 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://bearsonmars.github.io/</loc>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-10-29T11:57:28+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/books/</loc>
+    <lastmod>2025-10-29T11:57:28+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/bookshelf/</loc>
+    <lastmod>2025-10-29T11:57:28+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/economics/</loc>
+    <lastmod>2025-10-29T11:57:28+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/history/</loc>
+    <lastmod>2025-10-29T11:57:28+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/bookshelf/peak_human/</loc>
+    <lastmod>2025-10-29T11:57:28+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/review/</loc>
+    <lastmod>2025-10-29T11:57:28+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-10-29T11:57:28+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/about/</loc>
+    <lastmod>2025-10-29T11:36:13+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/non_distracting_music/</loc>
+    <lastmod>2025-10-29T10:48:16+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-10-29T10:48:16+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/soundtrack/</loc>
+    <lastmod>2025-10-29T10:48:16+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/spirituality/</loc>
+    <lastmod>2025-10-29T10:48:16+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/movies/</loc>
     <lastmod>2025-10-28T19:25:06+00:00</lastmod>
   </url><url>
-    <loc>https://bearsonmars.github.io/tags/movies/</loc>
+    <loc>http://localhost:1313/tags/mythology/</loc>
     <lastmod>2025-10-28T19:25:06+00:00</lastmod>
   </url><url>
-    <loc>https://bearsonmars.github.io/tags/mythology/</loc>
+    <loc>http://localhost:1313/posts/tron_ares_review/</loc>
     <lastmod>2025-10-28T19:25:06+00:00</lastmod>
   </url><url>
-    <loc>https://bearsonmars.github.io/posts/</loc>
-    <lastmod>2025-10-28T19:25:06+00:00</lastmod>
-  </url><url>
-    <loc>https://bearsonmars.github.io/tags/review/</loc>
-    <lastmod>2025-10-28T19:25:06+00:00</lastmod>
-  </url><url>
-    <loc>https://bearsonmars.github.io/tags/soundtrack/</loc>
-    <lastmod>2025-10-28T19:25:06+00:00</lastmod>
-  </url><url>
-    <loc>https://bearsonmars.github.io/tags/</loc>
-    <lastmod>2025-10-28T19:25:06+00:00</lastmod>
-  </url><url>
-    <loc>https://bearsonmars.github.io/posts/tron_ares_review/</loc>
-    <lastmod>2025-10-28T19:25:06+00:00</lastmod>
-  </url><url>
-    <loc>https://bearsonmars.github.io/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
   </url>
 </urlset>

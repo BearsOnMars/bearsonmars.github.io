@@ -1,27 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Review on anuj says</title>
-    <link>http://localhost:1313/tags/review/</link>
-    <description>Recent content in Review on anuj says</description>
+    <title>Bookshelves on anuj says</title>
+    <link>http://localhost:1313/bookshelf/</link>
+    <description>Recent content in Bookshelves on anuj says</description>
     <generator>Hugo</generator>
     <language>en-gb</language>
     <copyright>© Anuj Kumar</copyright>
     <lastBuildDate>Wed, 29 Oct 2025 11:57:28 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/review/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/bookshelf/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Peak Human - by Johan Norberg</title>
       <link>http://localhost:1313/bookshelf/peak_human/</link>
       <pubDate>Wed, 29 Oct 2025 11:57:28 +0000</pubDate>
       <guid>http://localhost:1313/bookshelf/peak_human/</guid>
       <description>&lt;p&gt;Here are some of the notes I made while reading this fascinating book. Absolutely recommed it to someone who wishes to understand how golden ages begin, and how they end - and they all DO end eventually!&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-dutch-republic&#34;&gt;The Dutch Republic&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;The discovery of new continents and sea routes shook European consciousness and sparked a new wave of curiosity and knowledge building&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;renaissance-italy&#34;&gt;Renaissance Italy&lt;/h2&gt;</description>
-    </item>
-    <item>
-      <title>Tron:Ares review</title>
-      <link>http://localhost:1313/posts/tron_ares_review/</link>
-      <pubDate>Tue, 28 Oct 2025 19:25:06 +0000</pubDate>
-      <guid>http://localhost:1313/posts/tron_ares_review/</guid>
-      <description>&lt;p&gt;This movie is a feast for the senses.&lt;/p&gt;&#xA;&lt;p&gt;The red color is star of the show, which is to be expected from the title&amp;rsquo;s allusion to the Greek god of warfare and bloodshed. The cinematography is brilliant; CGI hits the sweet spot and my god the soundtrack by Nine Inch Nails! Some have even gone as far as to suggest that the movie is essentially a video companion to their music.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
