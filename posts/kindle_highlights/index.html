@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html><head lang="en">
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Local Streamlit app for browsing Kindle highlights - anuj says</title><link rel="icon" type="image/png" href=favicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="I wanted to view the highlights and notes from the books I have read on my
+Kindle to be able to make some posts for this blog, but Amazon don&rsquo;t make it
+easy for some reason.
+The My Clippings.txt file, where a reader&rsquo;s notes, highlights and bookmarks
+are stored, is hard to read and annoying. Apparently an
+industry has come up to help users make sense of their own notes and
+clippings-for a fee ofcourse." />
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content="https://bearsonmars.github.io/posts/kindle_highlights/">
+  <meta property="og:site_name" content="anuj says">
+  <meta property="og:title" content="Local Streamlit app for browsing Kindle highlights">
+  <meta property="og:description" content="I wanted to view the highlights and notes from the books I have read on my Kindle to be able to make some posts for this blog, but Amazon don’t make it easy for some reason.
+The My Clippings.txt file, where a reader’s notes, highlights and bookmarks are stored, is hard to read and annoying. Apparently an industry has come up to help users make sense of their own notes and clippings-for a fee ofcourse.">
+  <meta property="og:locale" content="en_gb">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-10-30T19:09:04+00:00">
+    <meta property="article:modified_time" content="2025-10-30T19:09:04+00:00">
+    <meta property="article:tag" content="Python">
+    <meta property="article:tag" content="Projects">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Local Streamlit app for browsing Kindle highlights">
+  <meta name="twitter:description" content="I wanted to view the highlights and notes from the books I have read on my Kindle to be able to make some posts for this blog, but Amazon don’t make it easy for some reason.
+The My Clippings.txt file, where a reader’s notes, highlights and bookmarks are stored, is hard to read and annoying. Apparently an industry has come up to help users make sense of their own notes and clippings-for a fee ofcourse.">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://bearsonmars.github.io/css/main.7a5c05040394322612a2d98397e9932aa81d9d7acc70199463e79f8180c8e0c0.css" />
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="https://bearsonmars.github.io/css/dark.478e7f2b9cf8d87be42edfd9fe1810beab1331847df94b1b430478b309f28282.css"  disabled /><script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+		
+		<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+			tex2jax: {
+				inlineMath: [['$','$'], ['\\(','\\)']],
+				displayMath: [['$$','$$'], ['\[','\]']],
+				processEscapes: true,
+				processEnvironments: true,
+				skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+				TeX: { equationNumbers: { autoNumber: "AMS" },
+						 extensions: ["AMSmath.js", "AMSsymbols.js"] }
+			}
+		});
+		</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css">
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"></script>
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+					renderMathInElement(document.body, {
+							delimiters: [
+									{left: "$$", right: "$$", display: true},
+									{left: "$", right: "$", display: false}
+							]
+					});
+			});
+		</script>
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://bearsonmars.github.io/">anuj says</a>
+	</div>
+	<nav>
+		
+		<a href="/">Home</a>
+		
+		<a href="/posts">All posts</a>
+		
+		<a href="/tags">Tags</a>
+		
+		<a href="/bookshelf">Bookshelf</a>
+		
+		<a href="/about">About me</a>
+		
+		<button id="dark-mode-toggle" class="nav-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" type="button"><svg class="feather" viewBox="0 0 24 24" fill="none" stroke="#232333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg></button>
+		<script src="https://bearsonmars.github.io/js/themetoggle.js"></script>
+		
+	</nav>
+</header>
+
+<main>
+  <article>
+    <div class="post-container">
+      
+      <div class="post-content">
+        <div class="title">
+          <h1 class="title">Local Streamlit app for browsing Kindle highlights</h1>
+          <div class="meta">Posted on Oct 30, 2025</div>
+        </div>
+        
+        <section class="body">
+          <p>I wanted to view the highlights and notes from the books I have read on my
+Kindle to be able to make some posts for this blog, but Amazon don&rsquo;t make it
+easy for some reason.</p>
+<p>The <strong>My Clippings.txt</strong> file, where a reader&rsquo;s notes, highlights and bookmarks
+are stored, is hard to read and annoying. Apparently an
+industry has come up to help users make sense of their own notes and
+clippings-for a fee ofcourse.</p>
+<p>I am not having any of that. So, I made a python app to make sense of my notes
+and to just refresh my memory of what thoughts I had while reading a particular
+book.</p>
+<p>Feel free to checkout the code in this <a href="https://github.com/BearsOnMars/Basics/tree/main/Python/Kindle%20highlights%20viewer">github link</a> with instructions to run the
+<code>app.py</code> file on your local machine.</p>
+<p>Here is what it looks like:
+<figure><img src="https://private-user-images.githubusercontent.com/73054575/507440137-19a3ab73-d42f-41a7-8dae-5a33f10e5bdb.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjE4NTMzNTksIm5iZiI6MTc2MTg1MzA1OSwicGF0aCI6Ii83MzA1NDU3NS81MDc0NDAxMzctMTlhM2FiNzMtZDQyZi00MWE3LThkYWUtNWEzM2YxMGU1YmRiLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTEwMzAlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUxMDMwVDE5MzczOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTFkZTg2NTZlZTJiODU2NTQ2Y2NlMTY5ZDkxYWFhZmVmMGM2NDE3NTY2ZGZiMWExZTZkNWNhMWU2YzJkNGIxOTAmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.XQPvGpZ7qyeZcGCH0l6sOYrF4btYPirJti9NoJw_P4M">
+</figure>
+</p>
+<p>The code is straightforward and I had help from AI. It looks great in my
+opinion, with a really handy search tool. Hopefully, I will now be able to
+review and share my thoughts on some of the books I loved reading in a more
+convenient manner.</p>
+<p>Here is the python script for <code>app.py</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># app.py</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> re
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> streamlit <span style="color:#66d9ef">as</span> st
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> requests
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> io <span style="color:#f92672">import</span> BytesIO
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> PIL <span style="color:#f92672">import</span> Image
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pathlib <span style="color:#f92672">import</span> Path
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ---------- Parsing ----------</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">parse_clippings</span>(file_path):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> open(file_path, <span style="color:#e6db74">&#39;r&#39;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;utf-8-sig&#39;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>        content <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>read()
+</span></span><span style="display:flex;"><span>    entries <span style="color:#f92672">=</span> content<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34;==========&#34;</span>)
+</span></span><span style="display:flex;"><span>    data <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> entry <span style="color:#f92672">in</span> entries:
+</span></span><span style="display:flex;"><span>        lines <span style="color:#f92672">=</span> [line<span style="color:#f92672">.</span>strip(<span style="color:#e6db74">&#34;﻿&#34;</span>)<span style="color:#f92672">.</span>strip() <span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> entry<span style="color:#f92672">.</span>strip()<span style="color:#f92672">.</span>splitlines() <span style="color:#66d9ef">if</span> line<span style="color:#f92672">.</span>strip()]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> len(lines) <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>        book_line <span style="color:#f92672">=</span> lines[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>        meta_line <span style="color:#f92672">=</span> lines[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>lower()
+</span></span><span style="display:flex;"><span>        kind <span style="color:#f92672">=</span> next((t<span style="color:#f92672">.</span>capitalize() <span style="color:#66d9ef">for</span> t <span style="color:#f92672">in</span> [<span style="color:#e6db74">&#34;highlight&#34;</span>, <span style="color:#e6db74">&#34;note&#34;</span>, <span style="color:#e6db74">&#34;bookmark&#34;</span>] <span style="color:#66d9ef">if</span> t <span style="color:#f92672">in</span> meta_line), <span style="color:#e6db74">&#34;Unknown&#34;</span>)
+</span></span><span style="display:flex;"><span>        loc_match <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>search(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;location ([\d-]+)&#39;</span>, meta_line)
+</span></span><span style="display:flex;"><span>        location <span style="color:#f92672">=</span> loc_match<span style="color:#f92672">.</span>group(<span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">if</span> loc_match <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#34;0&#34;</span>
+</span></span><span style="display:flex;"><span>        date_match <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>search(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;added on (.*)&#39;</span>, meta_line)
+</span></span><span style="display:flex;"><span>        date <span style="color:#f92672">=</span> date_match<span style="color:#f92672">.</span>group(<span style="color:#ae81ff">1</span>)<span style="color:#f92672">.</span>strip() <span style="color:#66d9ef">if</span> date_match <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>join(lines[<span style="color:#ae81ff">2</span>:])<span style="color:#f92672">.</span>strip()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> text <span style="color:#f92672">or</span> <span style="color:#e6db74">&#34;you have reached the clipping limit&#34;</span> <span style="color:#f92672">in</span> text<span style="color:#f92672">.</span>lower():
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>        data<span style="color:#f92672">.</span>append({
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Book&#34;</span>: book_line,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Type&#34;</span>: kind,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Location&#34;</span>: location,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Date Added&#34;</span>: date,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Text&#34;</span>: text
+</span></span><span style="display:flex;"><span>        })
+</span></span><span style="display:flex;"><span>    df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(data)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> df<span style="color:#f92672">.</span>empty:
+</span></span><span style="display:flex;"><span>        df<span style="color:#f92672">.</span>drop_duplicates(subset<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;Book&#34;</span>, <span style="color:#e6db74">&#34;Type&#34;</span>, <span style="color:#e6db74">&#34;Location&#34;</span>, <span style="color:#e6db74">&#34;Text&#34;</span>], inplace<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>        df[<span style="color:#e6db74">&#34;NumericLocation&#34;</span>] <span style="color:#f92672">=</span> df[<span style="color:#e6db74">&#34;Location&#34;</span>]<span style="color:#f92672">.</span>apply(<span style="color:#66d9ef">lambda</span> x: int(x<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;-&#39;</span>)[<span style="color:#ae81ff">0</span>]) <span style="color:#66d9ef">if</span> x <span style="color:#66d9ef">else</span> <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>        df<span style="color:#f92672">.</span>sort_values(by<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;Book&#34;</span>, <span style="color:#e6db74">&#34;NumericLocation&#34;</span>], inplace<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> df
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ---------- Cached Parsing ----------</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@st.cache_data</span>(show_spinner<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_parsed_clippings</span>(file_path):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> parse_clippings(file_path)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ---------- Helpers ----------</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@st.cache_data</span>(show_spinner<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fetch_cover</span>(book_title):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        resp <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;https://openlibrary.org/search.json?title=</span><span style="color:#e6db74">{</span>requests<span style="color:#f92672">.</span>utils<span style="color:#f92672">.</span>quote(book_title)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>, timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">8</span>)
+</span></span><span style="display:flex;"><span>        data <span style="color:#f92672">=</span> resp<span style="color:#f92672">.</span>json()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;docs&#34;</span> <span style="color:#f92672">in</span> data <span style="color:#f92672">and</span> len(data[<span style="color:#e6db74">&#34;docs&#34;</span>]) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>            doc <span style="color:#f92672">=</span> data[<span style="color:#e6db74">&#34;docs&#34;</span>][<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>            cover_id <span style="color:#f92672">=</span> doc<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;cover_i&#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> cover_id:
+</span></span><span style="display:flex;"><span>                img_data <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;https://covers.openlibrary.org/b/id/</span><span style="color:#e6db74">{</span>cover_id<span style="color:#e6db74">}</span><span style="color:#e6db74">-L.jpg&#34;</span>, timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">8</span>)<span style="color:#f92672">.</span>content
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> Image<span style="color:#f92672">.</span>open(BytesIO(img_data))
+</span></span><span style="display:flex;"><span>        gbooks_resp <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;https://www.googleapis.com/books/v1/volumes?q=</span><span style="color:#e6db74">{</span>requests<span style="color:#f92672">.</span>utils<span style="color:#f92672">.</span>quote(book_title)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>, timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">8</span>)
+</span></span><span style="display:flex;"><span>        gbooks <span style="color:#f92672">=</span> gbooks_resp<span style="color:#f92672">.</span>json()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;items&#34;</span> <span style="color:#f92672">in</span> gbooks <span style="color:#f92672">and</span> len(gbooks[<span style="color:#e6db74">&#34;items&#34;</span>]) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>            img_url <span style="color:#f92672">=</span> gbooks[<span style="color:#e6db74">&#34;items&#34;</span>][<span style="color:#ae81ff">0</span>][<span style="color:#e6db74">&#34;volumeInfo&#34;</span>]<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;imageLinks&#34;</span>, {})<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;thumbnail&#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> img_url:
+</span></span><span style="display:flex;"><span>                img_data <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(img_url, timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">8</span>)<span style="color:#f92672">.</span>content
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> Image<span style="color:#f92672">.</span>open(BytesIO(img_data))
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">pass</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ---------- Display ----------</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">show_random_highlight</span>(df, search_query<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> df<span style="color:#f92672">.</span>empty:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>    highlight <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>sample(<span style="color:#ae81ff">1</span>)<span style="color:#f92672">.</span>iloc[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>    emoji <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;Highlight&#34;</span>: <span style="color:#e6db74">&#34;🖊️&#34;</span>, <span style="color:#e6db74">&#34;Note&#34;</span>: <span style="color:#e6db74">&#34;📓&#34;</span>, <span style="color:#e6db74">&#34;Bookmark&#34;</span>: <span style="color:#e6db74">&#34;📍&#34;</span>}<span style="color:#f92672">.</span>get(highlight[<span style="color:#e6db74">&#34;Type&#34;</span>], <span style="color:#e6db74">&#34;📘&#34;</span>)
+</span></span><span style="display:flex;"><span>    text <span style="color:#f92672">=</span> highlight[<span style="color:#e6db74">&#39;Text&#39;</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> search_query:
+</span></span><span style="display:flex;"><span>        text <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>sub(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;(</span><span style="color:#e6db74">{</span>re<span style="color:#f92672">.</span>escape(search_query)<span style="color:#e6db74">}</span><span style="color:#e6db74">)&#34;</span>, <span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;&lt;mark&gt;\1&lt;/mark&gt;&#34;</span>, text, flags<span style="color:#f92672">=</span>re<span style="color:#f92672">.</span>I)
+</span></span><span style="display:flex;"><span>    st<span style="color:#f92672">.</span>markdown(<span style="color:#e6db74">&#34;### 🎲 Random Highlight&#34;</span>)
+</span></span><span style="display:flex;"><span>    st<span style="color:#f92672">.</span>markdown(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;**</span><span style="color:#e6db74">{</span>emoji<span style="color:#e6db74">}</span><span style="color:#e6db74"> </span><span style="color:#e6db74">{</span>highlight[<span style="color:#e6db74">&#39;Type&#39;</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74"> — </span><span style="color:#e6db74">{</span>highlight[<span style="color:#e6db74">&#39;Book&#39;</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74"> — Location </span><span style="color:#e6db74">{</span>highlight[<span style="color:#e6db74">&#39;Location&#39;</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">**&#34;</span>)
+</span></span><span style="display:flex;"><span>    st<span style="color:#f92672">.</span>markdown(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;&gt; </span><span style="color:#e6db74">{</span>text<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>, unsafe_allow_html<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>    st<span style="color:#f92672">.</span>markdown(<span style="color:#e6db74">&#34;---&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">render_book_list</span>(df, search_query<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>):
+</span></span><span style="display:flex;"><span>    books <span style="color:#f92672">=</span> sorted(df[<span style="color:#e6db74">&#34;Book&#34;</span>]<span style="color:#f92672">.</span>unique())
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> books:
+</span></span><span style="display:flex;"><span>        st<span style="color:#f92672">.</span>info(<span style="color:#e6db74">&#34;No books found.&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> idx, book <span style="color:#f92672">in</span> enumerate(books):
+</span></span><span style="display:flex;"><span>        book_df <span style="color:#f92672">=</span> df[df[<span style="color:#e6db74">&#34;Book&#34;</span>] <span style="color:#f92672">==</span> book]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> search_query:
+</span></span><span style="display:flex;"><span>            highlights_matching <span style="color:#f92672">=</span> book_df[book_df[<span style="color:#e6db74">&#34;Text&#34;</span>]<span style="color:#f92672">.</span>str<span style="color:#f92672">.</span>contains(search_query, <span style="color:#66d9ef">case</span><span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, na<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            highlights_matching <span style="color:#f92672">=</span> book_df
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        highlights_count <span style="color:#f92672">=</span> len(highlights_matching)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> highlights_matching<span style="color:#f92672">.</span>empty:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        first_highlight <span style="color:#f92672">=</span> highlights_matching<span style="color:#f92672">.</span>iloc[<span style="color:#ae81ff">0</span>][<span style="color:#e6db74">&#34;Text&#34;</span>]
+</span></span><span style="display:flex;"><span>        sneak_preview <span style="color:#f92672">=</span> first_highlight <span style="color:#66d9ef">if</span> len(first_highlight) <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">100</span> <span style="color:#66d9ef">else</span> first_highlight[:<span style="color:#ae81ff">97</span>] <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;...&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> search_query:
+</span></span><span style="display:flex;"><span>            sneak_preview <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>sub(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;(</span><span style="color:#e6db74">{</span>re<span style="color:#f92672">.</span>escape(search_query)<span style="color:#e6db74">}</span><span style="color:#e6db74">)&#34;</span>, <span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;&lt;mark&gt;\1&lt;/mark&gt;&#34;</span>, sneak_preview, flags<span style="color:#f92672">=</span>re<span style="color:#f92672">.</span>I)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        cover <span style="color:#f92672">=</span> fetch_cover(book)
+</span></span><span style="display:flex;"><span>        cols <span style="color:#f92672">=</span> st<span style="color:#f92672">.</span>columns([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>])
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> cols[<span style="color:#ae81ff">0</span>]:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> cover:
+</span></span><span style="display:flex;"><span>                st<span style="color:#f92672">.</span>image(cover, width<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stretch&#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>                st<span style="color:#f92672">.</span>image(<span style="color:#e6db74">&#34;https://via.placeholder.com/100x150?text=No+Cover&#34;</span>, width<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stretch&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">with</span> cols[<span style="color:#ae81ff">1</span>]:
+</span></span><span style="display:flex;"><span>            st<span style="color:#f92672">.</span>markdown(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;### </span><span style="color:#e6db74">{</span>book<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>            st<span style="color:#f92672">.</span>caption(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;🖊️ </span><span style="color:#e6db74">{</span>highlights_count<span style="color:#e6db74">}</span><span style="color:#e6db74"> highlight(s) matching&#34;</span>)
+</span></span><span style="display:flex;"><span>            st<span style="color:#f92672">.</span>markdown(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;&gt; </span><span style="color:#e6db74">{</span>sneak_preview<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>, unsafe_allow_html<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> st<span style="color:#f92672">.</span>button(<span style="color:#e6db74">&#34;View Highlights&#34;</span>, key<span style="color:#f92672">=</span><span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;btn_</span><span style="color:#e6db74">{</span>idx<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>):
+</span></span><span style="display:flex;"><span>                st<span style="color:#f92672">.</span>session_state<span style="color:#f92672">.</span>selected_book <span style="color:#f92672">=</span> book
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        st<span style="color:#f92672">.</span>markdown(<span style="color:#e6db74">&#34;&lt;hr style=&#39;margin:4px 0;&#39;&gt;&#34;</span>, unsafe_allow_html<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">show_book_highlights</span>(df, book, search_query<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>):
+</span></span><span style="display:flex;"><span>    st<span style="color:#f92672">.</span>markdown(<span style="color:#e6db74">&#39;&lt;a id=&#34;top&#34;&gt;&lt;/a&gt;&#39;</span>, unsafe_allow_html<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> st<span style="color:#f92672">.</span>button(<span style="color:#e6db74">&#34;⬅ Back to Library&#34;</span>):
+</span></span><span style="display:flex;"><span>        st<span style="color:#f92672">.</span>session_state<span style="color:#f92672">.</span>selected_book <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    book_df <span style="color:#f92672">=</span> df[df[<span style="color:#e6db74">&#34;Book&#34;</span>] <span style="color:#f92672">==</span> book]<span style="color:#f92672">.</span>sort_values(by<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;NumericLocation&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> search_query:
+</span></span><span style="display:flex;"><span>        book_df <span style="color:#f92672">=</span> book_df[book_df[<span style="color:#e6db74">&#34;Text&#34;</span>]<span style="color:#f92672">.</span>str<span style="color:#f92672">.</span>contains(search_query, <span style="color:#66d9ef">case</span><span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, na<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    st<span style="color:#f92672">.</span>markdown(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;## </span><span style="color:#e6db74">{</span>book<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    st<span style="color:#f92672">.</span>markdown(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;**Total notes/highlights:** </span><span style="color:#e6db74">{</span>len(book_df)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    st<span style="color:#f92672">.</span>markdown(<span style="color:#e6db74">&#34;---&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> _, row <span style="color:#f92672">in</span> book_df<span style="color:#f92672">.</span>iterrows():
+</span></span><span style="display:flex;"><span>        emoji <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;Highlight&#34;</span>: <span style="color:#e6db74">&#34;🖊️&#34;</span>, <span style="color:#e6db74">&#34;Note&#34;</span>: <span style="color:#e6db74">&#34;📓&#34;</span>, <span style="color:#e6db74">&#34;Bookmark&#34;</span>: <span style="color:#e6db74">&#34;📍&#34;</span>}<span style="color:#f92672">.</span>get(row[<span style="color:#e6db74">&#34;Type&#34;</span>], <span style="color:#e6db74">&#34;📘&#34;</span>)
+</span></span><span style="display:flex;"><span>        text <span style="color:#f92672">=</span> row[<span style="color:#e6db74">&#34;Text&#34;</span>]
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> search_query:
+</span></span><span style="display:flex;"><span>            text <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>sub(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;(</span><span style="color:#e6db74">{</span>re<span style="color:#f92672">.</span>escape(search_query)<span style="color:#e6db74">}</span><span style="color:#e6db74">)&#34;</span>, <span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;&lt;mark&gt;\1&lt;/mark&gt;&#34;</span>, text, flags<span style="color:#f92672">=</span>re<span style="color:#f92672">.</span>I)
+</span></span><span style="display:flex;"><span>        st<span style="color:#f92672">.</span>markdown(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;**</span><span style="color:#e6db74">{</span>emoji<span style="color:#e6db74">}</span><span style="color:#e6db74"> </span><span style="color:#e6db74">{</span>row[<span style="color:#e6db74">&#39;Type&#39;</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74"> — _Location </span><span style="color:#e6db74">{</span>row[<span style="color:#e6db74">&#39;Location&#39;</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">_ — </span><span style="color:#e6db74">{</span>row[<span style="color:#e6db74">&#39;Date Added&#39;</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">**&#34;</span>)
+</span></span><span style="display:flex;"><span>        st<span style="color:#f92672">.</span>markdown(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;&gt; </span><span style="color:#e6db74">{</span>text<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>, unsafe_allow_html<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>        st<span style="color:#f92672">.</span>markdown(<span style="color:#e6db74">&#34;---&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    st<span style="color:#f92672">.</span>markdown(<span style="color:#e6db74">&#39;&lt;a href=&#34;#top&#34;&gt;&lt;button style=&#34;padding:5px 10px;&#34;&gt;🔝 Go to Top&lt;/button&gt;&lt;/a&gt;&#39;</span>, unsafe_allow_html<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    st<span style="color:#f92672">.</span>download_button(
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;💾 Download Highlights as CSV&#34;</span>,
+</span></span><span style="display:flex;"><span>        data<span style="color:#f92672">=</span>book_df<span style="color:#f92672">.</span>to_csv(index<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#34;utf-8&#34;</span>),
+</span></span><span style="display:flex;"><span>        file_name<span style="color:#f92672">=</span><span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>book<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;/&#39;</span>, <span style="color:#e6db74">&#39;_&#39;</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">_highlights.csv&#34;</span>,
+</span></span><span style="display:flex;"><span>        mime<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/csv&#34;</span>
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    markdown_text <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;# </span><span style="color:#e6db74">{</span>book<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> _, row <span style="color:#f92672">in</span> book_df<span style="color:#f92672">.</span>iterrows():
+</span></span><span style="display:flex;"><span>        emoji <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;Highlight&#34;</span>: <span style="color:#e6db74">&#34;🖊️&#34;</span>, <span style="color:#e6db74">&#34;Note&#34;</span>: <span style="color:#e6db74">&#34;📓&#34;</span>, <span style="color:#e6db74">&#34;Bookmark&#34;</span>: <span style="color:#e6db74">&#34;📍&#34;</span>}<span style="color:#f92672">.</span>get(row[<span style="color:#e6db74">&#34;Type&#34;</span>], <span style="color:#e6db74">&#34;📘&#34;</span>)
+</span></span><span style="display:flex;"><span>        markdown_text <span style="color:#f92672">+=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;**</span><span style="color:#e6db74">{</span>emoji<span style="color:#e6db74">}</span><span style="color:#e6db74"> </span><span style="color:#e6db74">{</span>row[<span style="color:#e6db74">&#39;Type&#39;</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74"> (Location </span><span style="color:#e6db74">{</span>row[<span style="color:#e6db74">&#39;Location&#39;</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">) — _</span><span style="color:#e6db74">{</span>row[<span style="color:#e6db74">&#39;Date Added&#39;</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">_**</span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>        markdown_text <span style="color:#f92672">+=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;&gt; </span><span style="color:#e6db74">{</span>row[<span style="color:#e6db74">&#39;Text&#39;</span>]<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">---</span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    st<span style="color:#f92672">.</span>download_button(
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;💾 Download Highlights as Markdown&#34;</span>,
+</span></span><span style="display:flex;"><span>        data<span style="color:#f92672">=</span>markdown_text<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#34;utf-8&#34;</span>),
+</span></span><span style="display:flex;"><span>        file_name<span style="color:#f92672">=</span><span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>book<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;/&#39;</span>, <span style="color:#e6db74">&#39;_&#39;</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">_highlights.md&#34;</span>,
+</span></span><span style="display:flex;"><span>        mime<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/markdown&#34;</span>
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">show_flat_search_results</span>(df, query):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> df<span style="color:#f92672">.</span>empty:
+</span></span><span style="display:flex;"><span>        st<span style="color:#f92672">.</span>info(<span style="color:#e6db74">&#34;No highlights found for this search term.&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>    st<span style="color:#f92672">.</span>markdown(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;### 🔎 All Highlights for &#39;</span><span style="color:#e6db74">{</span>query<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;&#34;</span>)
+</span></span><span style="display:flex;"><span>    st<span style="color:#f92672">.</span>markdown(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;**Total matching highlights:** </span><span style="color:#e6db74">{</span>len(df)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> _, row <span style="color:#f92672">in</span> df<span style="color:#f92672">.</span>iterrows():
+</span></span><span style="display:flex;"><span>        emoji <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;Highlight&#34;</span>: <span style="color:#e6db74">&#34;🖊️&#34;</span>, <span style="color:#e6db74">&#34;Note&#34;</span>: <span style="color:#e6db74">&#34;📓&#34;</span>, <span style="color:#e6db74">&#34;Bookmark&#34;</span>: <span style="color:#e6db74">&#34;📍&#34;</span>}<span style="color:#f92672">.</span>get(row[<span style="color:#e6db74">&#34;Type&#34;</span>], <span style="color:#e6db74">&#34;📘&#34;</span>)
+</span></span><span style="display:flex;"><span>        highlighted_text <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>sub(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;(</span><span style="color:#e6db74">{</span>re<span style="color:#f92672">.</span>escape(query)<span style="color:#e6db74">}</span><span style="color:#e6db74">)&#34;</span>, <span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;&lt;mark&gt;\1&lt;/mark&gt;&#34;</span>, row[<span style="color:#e6db74">&#34;Text&#34;</span>], flags<span style="color:#f92672">=</span>re<span style="color:#f92672">.</span>I)
+</span></span><span style="display:flex;"><span>        st<span style="color:#f92672">.</span>markdown(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;**</span><span style="color:#e6db74">{</span>emoji<span style="color:#e6db74">}</span><span style="color:#e6db74"> </span><span style="color:#e6db74">{</span>row[<span style="color:#e6db74">&#39;Type&#39;</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74"> — </span><span style="color:#e6db74">{</span>row[<span style="color:#e6db74">&#39;Book&#39;</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74"> — Location </span><span style="color:#e6db74">{</span>row[<span style="color:#e6db74">&#39;Location&#39;</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74"> — </span><span style="color:#e6db74">{</span>row[<span style="color:#e6db74">&#39;Date Added&#39;</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">**&#34;</span>)
+</span></span><span style="display:flex;"><span>        st<span style="color:#f92672">.</span>markdown(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;&gt; </span><span style="color:#e6db74">{</span>highlighted_text<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>, unsafe_allow_html<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>        st<span style="color:#f92672">.</span>markdown(<span style="color:#e6db74">&#34;---&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># ---------- Main ----------</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+</span></span><span style="display:flex;"><span>    st<span style="color:#f92672">.</span>set_page_config(page_title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Kindle Highlights Hub&#34;</span>, layout<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;centered&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    st<span style="color:#f92672">.</span>markdown(<span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;style&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    div[data-testid=&#34;stVerticalBlock&#34;] { margin-top: 4px; margin-bottom: 4px; padding: 2px 0px; }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    hr { margin: 2px 0px; }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    mark { background-color: #ffff00; color: black; }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;/style&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>, unsafe_allow_html<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    st<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#34;📚 Kindle Highlights Hub&#34;</span>)
+</span></span><span style="display:flex;"><span>    st<span style="color:#f92672">.</span>caption(<span style="color:#e6db74">&#34;Local, searchable viewer for your Kindle &#39;My Clippings.txt&#39;&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    uploaded <span style="color:#f92672">=</span> st<span style="color:#f92672">.</span>file_uploader(<span style="color:#e6db74">&#34;Upload your My Clippings.txt&#34;</span>, type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;txt&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> uploaded:
+</span></span><span style="display:flex;"><span>        tmp_path <span style="color:#f92672">=</span> Path(<span style="color:#e6db74">&#34;uploaded_clippings.txt&#34;</span>)
+</span></span><span style="display:flex;"><span>        tmp_path<span style="color:#f92672">.</span>write_bytes(uploaded<span style="color:#f92672">.</span>getbuffer())
+</span></span><span style="display:flex;"><span>        source_path <span style="color:#f92672">=</span> tmp_path
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        local <span style="color:#f92672">=</span> Path(<span style="color:#e6db74">&#34;My Clippings.txt&#34;</span>)
+</span></span><span style="display:flex;"><span>        source_path <span style="color:#f92672">=</span> local <span style="color:#66d9ef">if</span> local<span style="color:#f92672">.</span>exists() <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> source_path:
+</span></span><span style="display:flex;"><span>        st<span style="color:#f92672">.</span>info(<span style="color:#e6db74">&#34;No clippings file found. Upload one or place it locally.&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    df <span style="color:#f92672">=</span> get_parsed_clippings(source_path)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> df<span style="color:#f92672">.</span>empty:
+</span></span><span style="display:flex;"><span>        st<span style="color:#f92672">.</span>warning(<span style="color:#e6db74">&#34;Parsed 0 entries. Check file validity.&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    st<span style="color:#f92672">.</span>sidebar<span style="color:#f92672">.</span>header(<span style="color:#e6db74">&#34;Filters &amp; Options&#34;</span>)
+</span></span><span style="display:flex;"><span>    q <span style="color:#f92672">=</span> st<span style="color:#f92672">.</span>sidebar<span style="color:#f92672">.</span>text_input(<span style="color:#e6db74">&#34;Search text&#34;</span>)
+</span></span><span style="display:flex;"><span>    book_query <span style="color:#f92672">=</span> st<span style="color:#f92672">.</span>sidebar<span style="color:#f92672">.</span>text_input(<span style="color:#e6db74">&#34;Filter by title/author&#34;</span>)
+</span></span><span style="display:flex;"><span>    type_filter <span style="color:#f92672">=</span> st<span style="color:#f92672">.</span>sidebar<span style="color:#f92672">.</span>multiselect(<span style="color:#e6db74">&#34;Type&#34;</span>, sorted(df[<span style="color:#e6db74">&#34;Type&#34;</span>]<span style="color:#f92672">.</span>unique()), default<span style="color:#f92672">=</span>list(df[<span style="color:#e6db74">&#34;Type&#34;</span>]<span style="color:#f92672">.</span>unique()))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    df_filtered <span style="color:#f92672">=</span> df[df[<span style="color:#e6db74">&#34;Type&#34;</span>]<span style="color:#f92672">.</span>isin(type_filter)]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> book_query:
+</span></span><span style="display:flex;"><span>        df_filtered <span style="color:#f92672">=</span> df_filtered[df_filtered[<span style="color:#e6db74">&#34;Book&#34;</span>]<span style="color:#f92672">.</span>str<span style="color:#f92672">.</span>contains(book_query, <span style="color:#66d9ef">case</span><span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, na<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    st<span style="color:#f92672">.</span>sidebar<span style="color:#f92672">.</span>write(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Entries: </span><span style="color:#e6db74">{</span>len(df_filtered)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;selected_book&#34;</span> <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> st<span style="color:#f92672">.</span>session_state:
+</span></span><span style="display:flex;"><span>        st<span style="color:#f92672">.</span>session_state<span style="color:#f92672">.</span>selected_book <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># If a book is selected</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> st<span style="color:#f92672">.</span>session_state<span style="color:#f92672">.</span>selected_book <span style="color:#f92672">and</span> st<span style="color:#f92672">.</span>session_state<span style="color:#f92672">.</span>selected_book <span style="color:#f92672">in</span> df_filtered[<span style="color:#e6db74">&#34;Book&#34;</span>]<span style="color:#f92672">.</span>unique():
+</span></span><span style="display:flex;"><span>        show_book_highlights(df_filtered, st<span style="color:#f92672">.</span>session_state<span style="color:#f92672">.</span>selected_book, search_query<span style="color:#f92672">=</span>q)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Show random highlight filtered by search term if any</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> q:
+</span></span><span style="display:flex;"><span>            df_search <span style="color:#f92672">=</span> df_filtered[df_filtered[<span style="color:#e6db74">&#34;Text&#34;</span>]<span style="color:#f92672">.</span>str<span style="color:#f92672">.</span>contains(q, <span style="color:#66d9ef">case</span><span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, na<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)]
+</span></span><span style="display:flex;"><span>            show_random_highlight(df_search, search_query<span style="color:#f92672">=</span>q)
+</span></span><span style="display:flex;"><span>            st<span style="color:#f92672">.</span>subheader(<span style="color:#e6db74">&#34;Library (Books with matches)&#34;</span>)
+</span></span><span style="display:flex;"><span>            render_book_list(df_filtered, search_query<span style="color:#f92672">=</span>q)
+</span></span><span style="display:flex;"><span>            show_flat_search_results(df_search, q)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            show_random_highlight(df_filtered)
+</span></span><span style="display:flex;"><span>            st<span style="color:#f92672">.</span>subheader(<span style="color:#e6db74">&#34;Library&#34;</span>)
+</span></span><span style="display:flex;"><span>            render_book_list(df_filtered)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+</span></span><span style="display:flex;"><span>    main()
+</span></span></code></pre></div>
+        </section>
+        <div class="post-tags">
+          
+          
+          <nav class="nav tags">
+            <ul class="tags">
+              
+              <li><a href="/tags/python">python</a></li>
+              
+              <li><a href="/tags/projects">projects</a></li>
+              
+            </ul>
+          </nav>
+          
+          
+        </div>
+      </div>
+
+      
+      
+    </div>
+
+    </article>
+</main>
+<footer>
+  <div style="display:flex"><a class="soc" href="https://github.com/BearsOnMars" rel="me" title="GitHub"><svg class="feather">
+       <use href="/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#github" />
+    </svg></a><a class="border"></a><a class="soc" href="https://instagram.com/basicennui/" rel="me" title="Instagram"><svg class="feather">
+       <use href="/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#instagram" />
+    </svg></a><a class="border"></a><a class="soc" href="https://linkedin.com/in/anuj-k-108108108/" rel="me" title="Linkedin"><svg class="feather">
+       <use href="/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#linkedin" />
+    </svg></a><a class="border"></a><a class="soc" href="https://open.spotify.com/user/ev8qw6uwl3kzp08gfx7djqwqy?si=fbfd1b9fc88d4fd7/" rel="me" title="Spotify"><svg class="feather">
+       <use href="/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#music" />
+    </svg></a><a class="border"></a></div>
+  <div class="footer-info">
+    2025  © Anuj Kumar |  <a
+      href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+  </div>
+</footer>
+
+
+
+</div>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on anuj says</title>
+    <link>https://bearsonmars.github.io/tags/python/</link>
+    <description>Recent content in Python on anuj says</description>
+    <generator>Hugo</generator>
+    <language>en-gb</language>
+    <copyright>© Anuj Kumar</copyright>
+    <lastBuildDate>Thu, 30 Oct 2025 19:09:04 +0000</lastBuildDate>
+    <atom:link href="https://bearsonmars.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Local Streamlit app for browsing Kindle highlights</title>
+      <link>https://bearsonmars.github.io/posts/kindle_highlights/</link>
+      <pubDate>Thu, 30 Oct 2025 19:09:04 +0000</pubDate>
+      <guid>https://bearsonmars.github.io/posts/kindle_highlights/</guid>
+      <description>&lt;p&gt;I wanted to view the highlights and notes from the books I have read on my&#xA;Kindle to be able to make some posts for this blog, but Amazon don&amp;rsquo;t make it&#xA;easy for some reason.&lt;/p&gt;&#xA;&lt;p&gt;The &lt;strong&gt;My Clippings.txt&lt;/strong&gt; file, where a reader&amp;rsquo;s notes, highlights and bookmarks&#xA;are stored, is hard to read and annoying. Apparently an&#xA;industry has come up to help users make sense of their own notes and&#xA;clippings-for a fee ofcourse.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
