@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html><head lang="en">
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Local Streamlit app for browsing Kindle highlights - anuj says</title><link rel="icon" type="image/png" href=favicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Streamlit webapp for browsing Kindle highlights - anuj says</title><link rel="icon" type="image/png" href=favicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="I wanted to view the highlights and notes from the books I have read on my
-Kindle to be able to make some posts for this blog, but Amazon don&rsquo;t make it
+Kindle to be able to make some posts for this blog, but Amazon does not make it
 easy for some reason.
 The My Clippings.txt file, where a reader&rsquo;s notes, highlights and bookmarks
 are stored, is hard to read and annoying. Apparently an
-industry has come up to help users make sense of their own notes and
+industry has sprung up to help Kindle users make sense of their own notes and
 clippings-for a fee ofcourse." />
 	<meta property="og:image" content=""/>
 	<meta property="og:url" content="https://bearsonmars.github.io/posts/kindle_highlights/">
   <meta property="og:site_name" content="anuj says">
-  <meta property="og:title" content="Local Streamlit app for browsing Kindle highlights">
-  <meta property="og:description" content="I wanted to view the highlights and notes from the books I have read on my Kindle to be able to make some posts for this blog, but Amazon don’t make it easy for some reason.
-The My Clippings.txt file, where a reader’s notes, highlights and bookmarks are stored, is hard to read and annoying. Apparently an industry has come up to help users make sense of their own notes and clippings-for a fee ofcourse.">
+  <meta property="og:title" content="Streamlit webapp for browsing Kindle highlights">
+  <meta property="og:description" content="I wanted to view the highlights and notes from the books I have read on my Kindle to be able to make some posts for this blog, but Amazon does not make it easy for some reason.
+The My Clippings.txt file, where a reader’s notes, highlights and bookmarks are stored, is hard to read and annoying. Apparently an industry has sprung up to help Kindle users make sense of their own notes and clippings-for a fee ofcourse.">
   <meta property="og:locale" content="en_gb">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -24,9 +24,9 @@ The My Clippings.txt file, where a reader’s notes, highlights and bookmarks ar
     <meta property="article:tag" content="Projects">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Local Streamlit app for browsing Kindle highlights">
-  <meta name="twitter:description" content="I wanted to view the highlights and notes from the books I have read on my Kindle to be able to make some posts for this blog, but Amazon don’t make it easy for some reason.
-The My Clippings.txt file, where a reader’s notes, highlights and bookmarks are stored, is hard to read and annoying. Apparently an industry has come up to help users make sense of their own notes and clippings-for a fee ofcourse.">
+  <meta name="twitter:title" content="Streamlit webapp for browsing Kindle highlights">
+  <meta name="twitter:description" content="I wanted to view the highlights and notes from the books I have read on my Kindle to be able to make some posts for this blog, but Amazon does not make it easy for some reason.
+The My Clippings.txt file, where a reader’s notes, highlights and bookmarks are stored, is hard to read and annoying. Apparently an industry has sprung up to help Kindle users make sense of their own notes and clippings-for a fee ofcourse.">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -101,32 +101,33 @@ The My Clippings.txt file, where a reader’s notes, highlights and bookmarks ar
       
       <div class="post-content">
         <div class="title">
-          <h1 class="title">Local Streamlit app for browsing Kindle highlights</h1>
+          <h1 class="title">Streamlit webapp for browsing Kindle highlights</h1>
           <div class="meta">Posted on Oct 30, 2025</div>
         </div>
         
         <section class="body">
           <p>I wanted to view the highlights and notes from the books I have read on my
-Kindle to be able to make some posts for this blog, but Amazon don&rsquo;t make it
+Kindle to be able to make some posts for this blog, but Amazon does not make it
 easy for some reason.</p>
 <p>The <strong>My Clippings.txt</strong> file, where a reader&rsquo;s notes, highlights and bookmarks
 are stored, is hard to read and annoying. Apparently an
-industry has come up to help users make sense of their own notes and
+industry has sprung up to help Kindle users make sense of their own notes and
 clippings-for a fee ofcourse.</p>
-<p>I am not having any of that. So, I made a python app to make sense of my notes
-and to just refresh my memory of what thoughts I had while reading a particular
-book.</p>
+<p>I am not having any of that. So, I made a python app which runs on my local
+machine without internet connection - to make sense of my notes
+and to just refresh my memory of the thoughts I had while reading a particular
+book. Web connection enables download of book covers, which just adds to the
+aesthetic but has no effect on functionality of the app.</p>
 <p>Feel free to checkout the code in this <a href="https://github.com/BearsOnMars/Basics/tree/main/Python/Kindle%20highlights%20viewer">github link</a> with instructions to run the
 <code>app.py</code> file on your local machine.</p>
-<p>Here is what it looks like:
-<figure><img src="https://i.ibb.co/MD1jYrBS/1.png">
+<p>Here is what the app interface looks like:
+<figure><img src="https://i.ibb.co/MD1jYrBS/1.png"><figcaption>
+      <h4>Kindle Highlights hub web app</h4>
+    </figcaption>
 </figure>
 </p>
-<p>The code is straightforward and I had help from AI. It looks great in my
-opinion, with a really handy search tool. Hopefully, I will now be able to
-review and share my thoughts on some of the books I loved reading in a more
-convenient manner.</p>
-<p>Here is the python script for <code>app.py</code>:</p>
+<p>My favorite feature is the really handy search tool which allows you to search all the highlights for a keyword in all the books. Hopefully, I will now be able to review and share my thoughts on some of the books I loved reading in a more convenient manner.</p>
+<p><strong>Here is the python script for <code>app.py</code>:</strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># app.py</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> re
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
@@ -375,7 +376,9 @@ convenient manner.</p>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
 </span></span><span style="display:flex;"><span>    main()
-</span></span></code></pre></div>
+</span></span></code></pre></div><p>Let me know your thoughts if you find this app useful.
+Bye for now!</p>
+
         </section>
         <div class="post-tags">
           
@@ -409,6 +412,8 @@ convenient manner.</p>
        <use href="/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#linkedin" />
     </svg></a><a class="border"></a><a class="soc" href="https://open.spotify.com/user/ev8qw6uwl3kzp08gfx7djqwqy?si=fbfd1b9fc88d4fd7/" rel="me" title="Spotify"><svg class="feather">
        <use href="/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#music" />
+    </svg></a><a class="border"></a><a class="soc" href="mailto:anujkumar@outlook.com" rel="me" title="Email"><svg class="feather">
+       <use href="/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#mail" />
     </svg></a><a class="border"></a></div>
   <div class="footer-info">
     2025  © Anuj Kumar |  <a
