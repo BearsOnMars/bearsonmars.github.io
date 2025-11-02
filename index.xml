@@ -2,46 +2,53 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>anuj says</title>
-    <link>https://bearsonmars.github.io/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on anuj says</description>
     <generator>Hugo</generator>
     <language>en-gb</language>
     <copyright>© Anuj Kumar</copyright>
-    <lastBuildDate>Thu, 30 Oct 2025 19:09:04 +0000</lastBuildDate>
-    <atom:link href="https://bearsonmars.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 02 Nov 2025 17:18:27 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>On Jealousy</title>
+      <link>http://localhost:1313/posts/jealousy/</link>
+      <pubDate>Sun, 02 Nov 2025 17:18:27 +0000</pubDate>
+      <guid>http://localhost:1313/posts/jealousy/</guid>
+      <description>&lt;p&gt;Where does Jealousy come from? What force makes someone want to covet what&#xA;others have? One way to think about jealousy might be to associate it with a&#xA;desire of some form, coupled with perhaps a feeling of inadequacy at not&#xA;possessing that object or entity of desire.&lt;/p&gt;&#xA;&lt;p&gt;Could there be a positive angle to jealousy though? It would be easy to make an&#xA;argument that jealousy is a cancerous emotion which keeps gnawing away steadily&#xA;where it resides. It certainly is distracting by nature. Having said that, is&#xA;this emotion still desirable if it leads to some personal transformation or&#xA;evolution of some kind? I am not sure. I suppose jealousy will form a new object of&#xA;desire once it fills the gap of what it was yearning originally.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Streamlit webapp for browsing Kindle highlights</title>
-      <link>https://bearsonmars.github.io/posts/kindle_highlights/</link>
+      <link>http://localhost:1313/posts/kindle_highlights/</link>
       <pubDate>Thu, 30 Oct 2025 19:09:04 +0000</pubDate>
-      <guid>https://bearsonmars.github.io/posts/kindle_highlights/</guid>
+      <guid>http://localhost:1313/posts/kindle_highlights/</guid>
       <description>&lt;p&gt;I wanted to view the highlights and notes from the books I have read on my&#xA;Kindle to be able to make some posts for this blog, but Amazon does not make it&#xA;easy for some reason.&lt;/p&gt;&#xA;&lt;p&gt;The &lt;strong&gt;My Clippings.txt&lt;/strong&gt; file, where a reader&amp;rsquo;s notes, highlights and bookmarks&#xA;are stored, is hard to read and annoying. Apparently an&#xA;industry has sprung up to help Kindle users make sense of their own notes and&#xA;clippings-for a fee ofcourse.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Peak Human - by Johan Norberg</title>
-      <link>https://bearsonmars.github.io/bookshelf/peak_human/</link>
+      <link>http://localhost:1313/bookshelf/peak_human/</link>
       <pubDate>Wed, 29 Oct 2025 11:57:28 +0000</pubDate>
-      <guid>https://bearsonmars.github.io/bookshelf/peak_human/</guid>
+      <guid>http://localhost:1313/bookshelf/peak_human/</guid>
       <description>&lt;p&gt;Here are some of the notes I made while reading this fascinating book. Absolutely recommed it to someone who wishes to understand how golden ages begin, and how they end - and they all DO end eventually!&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-dutch-republic&#34;&gt;The Dutch Republic&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;The discovery of new continents and sea routes shook European consciousness and sparked a new wave of curiosity and knowledge building&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;renaissance-italy&#34;&gt;Renaissance Italy&lt;/h2&gt;</description>
     </item>
     <item>
       <title>Who am I?</title>
-      <link>https://bearsonmars.github.io/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Wed, 29 Oct 2025 11:36:13 +0000</pubDate>
-      <guid>https://bearsonmars.github.io/about/</guid>
+      <guid>http://localhost:1313/about/</guid>
       <description>&lt;p&gt;Hello, I am called Anuj Kumar and thank you for showing an interest in learning about me.&lt;/p&gt;&#xA;&lt;p&gt;I have been a financial derivatives trader, a data scientist, a chef, a spiritual guide, a painter, a writer - and I continue to be all of them. I enjoy testing the limits of what I am capable of doing professionally. There are infinite possibilities to explore.&lt;/p&gt;&#xA;&lt;p&gt;At the core of my being is the desire to understand, manipulate, model and communicate the story behind words and numbers which govern the world and ideas around us. I am equally adept and comfortable with both of them. I am thrilled about the opportunities in this brave new AI world to usher in a preternatural era of prosperity and growth for all.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Music which does not distract</title>
-      <link>https://bearsonmars.github.io/posts/non_distracting_music/</link>
+      <link>http://localhost:1313/posts/non_distracting_music/</link>
       <pubDate>Wed, 29 Oct 2025 10:48:16 +0000</pubDate>
-      <guid>https://bearsonmars.github.io/posts/non_distracting_music/</guid>
+      <guid>http://localhost:1313/posts/non_distracting_music/</guid>
       <description>&lt;p&gt;Some background sound is always preferable to avoid our minds from chattering away. Well that has been my experience. I do not understand why it happens. Spiritual teachers such as the Buddha have suggested that if we are able to keep our minds from thinking about anything for even a single minute, we are already enlightened. It seems such an easy thing to say but incredibly hard to put into action.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Tron:Ares review</title>
-      <link>https://bearsonmars.github.io/posts/tron_ares_review/</link>
+      <link>http://localhost:1313/posts/tron_ares_review/</link>
       <pubDate>Tue, 28 Oct 2025 19:25:06 +0000</pubDate>
-      <guid>https://bearsonmars.github.io/posts/tron_ares_review/</guid>
+      <guid>http://localhost:1313/posts/tron_ares_review/</guid>
       <description>&lt;p&gt;This movie is a feast for the senses.&lt;/p&gt;&#xA;&lt;p&gt;The red color is star of the show, which is to be expected from the title&amp;rsquo;s allusion to the Greek god of warfare and bloodshed. The cinematography is brilliant; CGI hits the sweet spot and my god the soundtrack by Nine Inch Nails! Some have even gone as far as to suggest that the movie is essentially a video companion to their music.&lt;/p&gt;</description>
     </item>
   </channel>
