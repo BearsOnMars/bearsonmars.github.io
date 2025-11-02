@@ -2,88 +2,88 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on anuj says</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://bearsonmars.github.io/tags/</link>
     <description>Recent content in Tags on anuj says</description>
     <generator>Hugo</generator>
     <language>en-gb</language>
     <copyright>© Anuj Kumar</copyright>
     <lastBuildDate>Sun, 02 Nov 2025 17:18:27 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://bearsonmars.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Philosophy</title>
-      <link>http://localhost:1313/tags/philosophy/</link>
+      <link>https://bearsonmars.github.io/tags/philosophy/</link>
       <pubDate>Sun, 02 Nov 2025 17:18:27 +0000</pubDate>
-      <guid>http://localhost:1313/tags/philosophy/</guid>
+      <guid>https://bearsonmars.github.io/tags/philosophy/</guid>
       <description></description>
     </item>
     <item>
       <title>Spirituality</title>
-      <link>http://localhost:1313/tags/spirituality/</link>
+      <link>https://bearsonmars.github.io/tags/spirituality/</link>
       <pubDate>Sun, 02 Nov 2025 17:18:27 +0000</pubDate>
-      <guid>http://localhost:1313/tags/spirituality/</guid>
+      <guid>https://bearsonmars.github.io/tags/spirituality/</guid>
       <description></description>
     </item>
     <item>
       <title>Projects</title>
-      <link>http://localhost:1313/tags/projects/</link>
+      <link>https://bearsonmars.github.io/tags/projects/</link>
       <pubDate>Thu, 30 Oct 2025 19:09:04 +0000</pubDate>
-      <guid>http://localhost:1313/tags/projects/</guid>
+      <guid>https://bearsonmars.github.io/tags/projects/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
-      <link>http://localhost:1313/tags/python/</link>
+      <link>https://bearsonmars.github.io/tags/python/</link>
       <pubDate>Thu, 30 Oct 2025 19:09:04 +0000</pubDate>
-      <guid>http://localhost:1313/tags/python/</guid>
+      <guid>https://bearsonmars.github.io/tags/python/</guid>
       <description></description>
     </item>
     <item>
       <title>Books</title>
-      <link>http://localhost:1313/tags/books/</link>
+      <link>https://bearsonmars.github.io/tags/books/</link>
       <pubDate>Wed, 29 Oct 2025 11:57:28 +0000</pubDate>
-      <guid>http://localhost:1313/tags/books/</guid>
+      <guid>https://bearsonmars.github.io/tags/books/</guid>
       <description></description>
     </item>
     <item>
       <title>Economics</title>
-      <link>http://localhost:1313/tags/economics/</link>
+      <link>https://bearsonmars.github.io/tags/economics/</link>
       <pubDate>Wed, 29 Oct 2025 11:57:28 +0000</pubDate>
-      <guid>http://localhost:1313/tags/economics/</guid>
+      <guid>https://bearsonmars.github.io/tags/economics/</guid>
       <description></description>
     </item>
     <item>
       <title>History</title>
-      <link>http://localhost:1313/tags/history/</link>
+      <link>https://bearsonmars.github.io/tags/history/</link>
       <pubDate>Wed, 29 Oct 2025 11:57:28 +0000</pubDate>
-      <guid>http://localhost:1313/tags/history/</guid>
+      <guid>https://bearsonmars.github.io/tags/history/</guid>
       <description></description>
     </item>
     <item>
       <title>Review</title>
-      <link>http://localhost:1313/tags/review/</link>
+      <link>https://bearsonmars.github.io/tags/review/</link>
       <pubDate>Wed, 29 Oct 2025 11:57:28 +0000</pubDate>
-      <guid>http://localhost:1313/tags/review/</guid>
+      <guid>https://bearsonmars.github.io/tags/review/</guid>
       <description></description>
     </item>
     <item>
       <title>Soundtrack</title>
-      <link>http://localhost:1313/tags/soundtrack/</link>
+      <link>https://bearsonmars.github.io/tags/soundtrack/</link>
       <pubDate>Wed, 29 Oct 2025 10:48:16 +0000</pubDate>
-      <guid>http://localhost:1313/tags/soundtrack/</guid>
+      <guid>https://bearsonmars.github.io/tags/soundtrack/</guid>
       <description></description>
     </item>
     <item>
       <title>Movies</title>
-      <link>http://localhost:1313/tags/movies/</link>
+      <link>https://bearsonmars.github.io/tags/movies/</link>
       <pubDate>Tue, 28 Oct 2025 19:25:06 +0000</pubDate>
-      <guid>http://localhost:1313/tags/movies/</guid>
+      <guid>https://bearsonmars.github.io/tags/movies/</guid>
       <description></description>
     </item>
     <item>
       <title>Mythology</title>
-      <link>http://localhost:1313/tags/mythology/</link>
+      <link>https://bearsonmars.github.io/tags/mythology/</link>
       <pubDate>Tue, 28 Oct 2025 19:25:06 +0000</pubDate>
-      <guid>http://localhost:1313/tags/mythology/</guid>
+      <guid>https://bearsonmars.github.io/tags/mythology/</guid>
       <description></description>
     </item>
   </channel>
