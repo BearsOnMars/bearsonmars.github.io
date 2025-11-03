@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-gb</language>
     <copyright>© Anuj Kumar</copyright>
-    <lastBuildDate>Thu, 30 Oct 2025 19:09:04 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 03 Nov 2025 13:19:34 +0000</lastBuildDate>
     <atom:link href="https://bearsonmars.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Prototyping GenAI apps: Best practices</title>
+      <link>https://bearsonmars.github.io/posts/prototyping_genai/</link>
+      <pubDate>Mon, 03 Nov 2025 13:19:34 +0000</pubDate>
+      <guid>https://bearsonmars.github.io/posts/prototyping_genai/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Streamlit webapp for browsing Kindle highlights</title>
       <link>https://bearsonmars.github.io/posts/kindle_highlights/</link>
