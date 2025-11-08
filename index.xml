@@ -7,8 +7,22 @@
     <generator>Hugo</generator>
     <language>en-gb</language>
     <copyright>© Anuj Kumar</copyright>
-    <lastBuildDate>Mon, 03 Nov 2025 22:51:57 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 06 Nov 2025 12:24:22 +0000</lastBuildDate>
     <atom:link href="https://bearsonmars.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Graph Algorithms: Introduction</title>
+      <link>https://bearsonmars.github.io/posts/graph_algorithms./</link>
+      <pubDate>Thu, 06 Nov 2025 12:24:22 +0000</pubDate>
+      <guid>https://bearsonmars.github.io/posts/graph_algorithms./</guid>
+      <description>&lt;h2 id=&#34;graphs-and-network-modeling&#34;&gt;Graphs and Network Modeling&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Using the graph approach to analysis, you consider that the world is&#xA;connected and, therefore, the entities are often not independent.&#xA;Information about network leaders - or key nodes - can help find the most efficient way to spread information.&#xA;Finding the most critical nodes can help disrupt or upgrade the resilience of  the network.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;What is a graph?&lt;/strong&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;used more in mathematical terminology and refers to a general language for describing and analysing entities and their relations or interactions&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;What is a network?&lt;/strong&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;a real-world dataset containing entities and their relationships, such as a social network, a communication network, or a road network.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h2 id=&#34;problems-suitable-for-network-analysis&#34;&gt;Problems suitable for Network Analysis&lt;/h2&gt;&#xA;&lt;p&gt;Below are the scenarios uniquely suitable for graph-based analysis:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Effective_communication</title>
+      <link>https://bearsonmars.github.io/posts/effective_communication/</link>
+      <pubDate>Wed, 05 Nov 2025 13:41:28 +0000</pubDate>
+      <guid>https://bearsonmars.github.io/posts/effective_communication/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;How to get the intended message across as efficiently and as unambiguously as&#xA;possible in the shortest amount of time - is a question many of us might have&#xA;asked ourself at one point. I wish I knew the right answer. But, in the spirit&#xA;of enquiry, I shall endeavour to find a half decent answer.&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
     <item>
       <title>How Economics Explains the World - by Andrew Leigh</title>
       <link>https://bearsonmars.github.io/bookshelf/economics_leigh/</link>
